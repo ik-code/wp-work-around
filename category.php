@@ -36,13 +36,16 @@
 
         <div class="case__open-headline">
             <h3><?php the_title(); ?></h3>
-            <h4><?php the_field('short_description'); ?></h4>
+            <p>
+                <span class="case__open-img">
+                    <?php $image = get_field('image'); ?>
+                    <img src="<?php echo $image['url']; ?>" alt="">
+                </span> <!-- .case__open-img -->
+                <?php the_field('short_description'); ?>
+            </p>
         </div> <!-- .case__open-headline -->
 
-        <div class="case__open-img">
-        	<?php $image = get_field('image'); ?>
-            <img src="<?php echo $image['url']; ?>" alt="">
-        </div> <!-- .case__open-img -->
+
 
         <div class="case__open-details">
         	<?php foreach (get_field('descr_blocks') as $block) { ?>

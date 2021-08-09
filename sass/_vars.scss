@@ -1,8 +1,10 @@
 // Responsive
-$tablet: 992px;
-$tablet_m: 991px;
-$mobile: 767px;
-$mobile_m: 768px;
+
+$bp-largest: 1280px;     // 1200px
+$bp-large: 1024px;    // 1100px
+$bp-medium: 900px;   // 900px
+$bp-small: 768px;     // 600px
+$bp-smallest: 500px; // 500px
 
 
 // Vars

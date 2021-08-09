@@ -74,7 +74,7 @@ input, button, textarea {
   font: normal 16px/100% $gtw-r;
   color: #000;
   
-  @media (max-width: $mobile) {
+  @media (max-width: $bp-small ) {
     height: 40px;
     padding: 0 10px;
     

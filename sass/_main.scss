@@ -2,6 +2,8 @@ body,
 html {
 	font-family: $gtw-r;
 	position: relative;
+	box-sizing: border-box;
+	font-size: 16px;
 }
 
 html {
@@ -706,7 +708,8 @@ html {
 	}
 	
 	&-in {
-		padding-left: 125px;
+		padding-left: 35px;
+		padding-right: 35px;
 		padding-top: 35px;
 		box-shadow: 0 2px 17px 0 rgba(186, 186, 186, 0.5);
 		height: 100%;
@@ -716,12 +719,13 @@ html {
 	}
 
 	&-img {
+		float: right;
+		margin: 0 0 8px 8px;
 		img {
+			width: 100%;
+			max-width: 250px;
 			display: block;
-			width: auto;
-			max-width: calc(100% + 125px);
 			height: auto;
-			margin-left: -125px;
 		}
 	}
 
@@ -771,6 +775,7 @@ html {
 		h3,
 		h4 {
 			margin: 0;
+			text-align: left;
 		}
 
 		h3 {
