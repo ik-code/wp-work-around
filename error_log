@@ -1,0 +1,12 @@
+[26-Dec-2020 16:35:01 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home1/workaro4/public_html/wp-content/themes/theme/index.php:1
+Stack trace:
+#0 {main}
+  thrown in /home1/workaro4/public_html/wp-content/themes/theme/index.php on line 1
+[22-May-2021 02:55:52 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home1/workaro4/public_html/wp-content/themes/theme/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home1/workaro4/public_html/wp-content/themes/theme/404.php on line 1
+[22-May-2021 07:48:35 America/Boise] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home1/workaro4/public_html/wp-content/themes/theme/404.php:1
+Stack trace:
+#0 {main}
+  thrown in /home1/workaro4/public_html/wp-content/themes/theme/404.php on line 1
