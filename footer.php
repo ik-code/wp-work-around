@@ -1,10 +1,16 @@
-<div id="contact-form" class="contact-form">
-    <div class="contact-form__wrapper wrapper p-typical headline__typical">
-        <div class="contact-form__inner">
-			<?php echo do_shortcode('[contact-form-7 id="326" title="Contact form 1"]'); ?>
+<?php if (!is_page('vacancies')): ?>
+    <?php if (!is_singular('vacancies')): ?>
+        <div id="contact-form" class="contact-form">
+            <div class="contact-form__wrapper wrapper p-typical headline__typical">
+                <div class="contact-form__inner">
+                    <?php echo do_shortcode(
+                      '[contact-form-7 id="326" title="Contact form 1"]'
+                    ); ?>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    <?php endif; ?>
+<?php endif; ?>
 
 <footer class="footer">
 <!--    <div class="footer__before p-typical">-->

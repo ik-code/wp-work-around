@@ -5,7 +5,7 @@
 	}
 }
 
-@media (max-width: $bp-large) {
+@media (max-width: 1024px) {
 	.headline__typical h3 {
 		br {
 			display: none;
@@ -183,7 +183,7 @@
 	}
 
 	.case__open-in {
-		padding-left: 35px;
+		padding-left: 60px;
 	}
 
 	.case__open-close {
@@ -192,7 +192,6 @@
 
 	.case__open-headline {
 		margin-bottom: 30px;
-		text-align: justify;
 	}
 
 	.case__open-details_item {
@@ -231,19 +230,7 @@
 	width: 35px;
 }
 
-@media (max-width: $bp-smallest) {
-
-	.case__open-img {
-		float: none;
-		display: block;
-		img{
-			margin: 25px auto;
-		}
-
-	}
-}
-
-@media (max-width: $bp-small) {
+@media (max-width: 767px) {
 	.overlay_menu .footer {
 		bottom: 60px;
 	}
@@ -799,7 +786,7 @@
 	}
 
 	.case__open-headline h3 {
-		font-size: 36px;
+		font-size: 45px;
 	}
 
 	.case__open-headline h4 {
@@ -807,7 +794,7 @@
 	}
 
 	.case__open-img {
-		margin: 0 0 8px 16px;
+		margin-bottom: 30px;
 	}
 
 	.case__open-details {
@@ -906,7 +893,7 @@
 }
 
 .footer__copy-wrap {
-	@media (min-width: $bp-large ) {
+	@media (min-width: 1024px) {
 
 		.overlay_menu-in {
 			z-index: 10000;
@@ -914,71 +901,8 @@
 	}
 }
 
-@media (min-width: $bp-large) {
+@media (min-width: 1025px) {
 	.footer__copy.hidden-xs.hidden-sm {
 		display: none;
-	}
-}
-
-@media (min-width: $bp-small) {
-	.case__open-headline h3 {
-		font-size: 36px;
-	}
-	.case__open-img {
-		margin: 0 0 8px 16px;
-	}
-}
-
-@media (min-width: 769px) {
-	.squares.wow.animated .squares__item-4 .line {
-		height: 191px;
-	}
-	.squares.wow.animated .squares__item-2 .line {
-		height: 192px;
-	}
-	.squares.wow.animated .squares__item-1 .line {
-		width: calc(100% - 22px);
-	}
-
-	.squares.wow.animated .squares__item-4 .line {
-		height: 191px;
-		left: 14px;
-		top: 29px;
-	}
-	.squares.wow.animated .squares__item-4 .line {
-		height: 190px;
-	}
-	.squares__item-4 .square {
-		left: 10px;
-	}
-	.squares.wow.animated .squares__item-5 .line-2 {
-		width: calc(100% - 10px );
-	}
-	.squares__item-5 .squares__item-dec_2 .line-2 {
-		right: -24px;
-	}
-	.squares__item-5 .line {
-		left: 17px;
-	}
-	.squares.wow.animated .squares__item-5 .line {
-		height: 160px;
-	}
-	.squares__item-5 .line {
-		bottom: 40px;
-	}
-	.squares__item-3 .square {
-		left: -2px;
-	}
-	.squares__item-3 .line {
-		bottom: 36px;
-	}
-	.squares.wow.animated .squares__item-3 .line {
-		height: 187px;
-	}
-}
-
-@media (max-width: 768px){
-	.top__l span, .top__r span, .top__burger span {
-		font-size: 9px;
 	}
 }

@@ -32,6 +32,23 @@ $('.scroll-link a').on('click',function (e) {
     });
 });
 
+$('.overlay_menu__nav .scroll-link a').on('click',function (e) {
+     //e.preventDefault();
+    var target = this.hash;
+    var $target = $(target);
+
+    $('.overlay_menu').css('display','none');
+    $('button.burger-btn').removeClass('burger-btn--active');
+    $('body').removeClass('overlay_menu--open');
+
+    $('html, body').animate({
+        'scrollTop': $target.offset().top
+    }, 900, 'swing', function () {
+        window.location.href = document.location.origin + '/' + target;
+    });
+
+ });
+
 
 $(document).ready(function() {
     $('.burger-btn').on('click', function(){

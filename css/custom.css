@@ -24,9 +24,15 @@
 
 .b-list_item h4 > a {
     color: inherit;
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid #000;
+    width: fit-content;
+    width: -moz-fit-content;
 }
 .b-list_item h4 > a:hover {
     text-decoration: none;
+    border-bottom: none;
 }
 
 /* 1.1 - Top Section */

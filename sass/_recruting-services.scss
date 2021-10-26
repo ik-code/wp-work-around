@@ -1,0 +1,129 @@
+.container-fluid.rectruting-services {
+  margin: 64px 0 0;
+
+
+  .row-flex {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .col-4.rectruting-services-item.text-center {
+      margin: 0 12px 24px;
+      background-color: #8080800a;
+      width: 300px;
+      padding: 16px;
+      .rectruting-services-item__percentage {
+        color: #baa856;
+        font-size: 36px;
+        font-weight: bold;
+      }
+
+      h3.rectruting-services-item__headline {
+        margin: 24px 0;
+      }
+
+      p.rectruting-services-item__decription {
+      }
+
+      p.rectruting-services-item__wr-link {
+
+        button.btn.btn-default.link-service {
+          background-color: #baa856;
+          font-weight: 500;
+          color: #f2f2f2f2;
+          padding: 16px 24px;
+          background-image: none;
+          outline: 0;
+          -webkit-box-shadow: inset 0 -4px 8px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.13);
+          font-size: 18px;
+
+          &:hover {
+            background-color: #f3e15e;
+            color: #000;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal.fade.bs-example-modal-md {
+  z-index: 100000;
+  padding: 0!important;
+
+  .modal-dialog.modal-md {
+
+    .modal-content {
+      border-radius: 0;
+      padding: 16px;
+      background-color: #fafafa;
+
+      .wpcf7-response-output,
+      .wpcf7-response-output {
+        border-color: #ffb900;
+        margin: 0 8px 8px;
+        text-align: center;
+        border-radius: 4px;
+      }
+
+      .form-our-service {
+        .gold-service{
+          color:  #baa856;
+        }
+
+        .wpcf7-not-valid-tip {
+          color: #dc3232;
+          font-size: 16px;
+          font-weight: normal;
+          display: block;
+          margin-top: 8px;
+          text-align: center;
+        }
+
+        .form-our-service__headline {
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          font-family: $gtw-b;
+        }
+
+        p {
+          padding: 0 8px;
+          margin: 24px 0 0;
+          text-align: center;
+        }
+
+        input[type="email"] {
+          width: 100%;
+          border: 1px solid black;
+          border-radius: 4px;
+          padding: 16px 16px;
+          font-size: 18px;
+        }
+
+        .button {
+          background-color: #baa856;
+          font-weight: 500;
+          color: #f2f2f2f2;
+          padding: 16px 24px;
+          background-image: none;
+          outline: 0;
+          -webkit-box-shadow: inset 0 -4px 8px rgba(0, 0, 0, .125);
+          box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.13);
+          border-radius: 4px;
+          border: none;
+          width: 100%;
+          font-size: 18px;
+
+          &:hover {
+            background-color: #f3e15e;
+            color: #000;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}
+

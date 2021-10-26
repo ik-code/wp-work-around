@@ -12,6 +12,7 @@ $list_type_second = get_field('list_type_second', $post_id);
 		</div> <!-- .headline__typical -->
 
 		<div class="numbered-list__inner">
+        
 			<?php if( have_rows('list_first') ): ?>
 				<ol class="numbered-list__items list-unstyled">
 					<?php while( have_rows('list_first') ): the_row();
@@ -19,7 +20,13 @@ $list_type_second = get_field('list_type_second', $post_id);
 						$text = get_sub_field('text');
 						$add_nested_list = get_sub_field('add_nested_list');
 						$add_editor = get_sub_field('add_editor');
-						$editor = get_sub_field('editor');
+                        $editor = get_sub_field('editor');
+
+                        $add_row_3_col= get_sub_field('add_row_3_col');
+                        $first_col_percentage = get_sub_field( 'first_col_percentage' );
+                        $second_col_percentage = get_sub_field( 'second_col_percentage' );
+                        $third_col_percentage = get_sub_field( 'third_col_percentage' );
+
 						$add_image = get_sub_field('add_image');
 						$image = get_sub_field('image');
 						$add_icons_list = get_sub_field('add_icons_list');
@@ -36,7 +43,42 @@ $list_type_second = get_field('list_type_second', $post_id);
                             </div>
 
                             <?php if ($text): ?>
-                                <div class="numbered-list__text"><?php echo $text; ?></div>
+                                <div class="numbered-list__text">
+                                    <?php echo $text; ?>
+
+
+                                    <?php if ($first_col_percentage && $second_col_percentage && $third_col_percentage && $add_row_3_col): ?>
+                                      <div class="container-fluid rectruting-services">
+
+                                            <!-- Three columns of text below the carousel -->
+                                            <div class="row-flex">
+                                                <div class="col-4 rectruting-services-item text-center">
+                                                    <div class="rectruting-services-item__percentage"><?php the_sub_field( 'first_col_percentage' ); ?></div>
+                                                    <h3 class="rectruting-services-item__headline"><?php the_sub_field( 'first_col_headline' ); ?></h3>
+                                                    <p class="rectruting-services-item__wr-link">
+                                                        <button data-service="<?php the_sub_field( 'first_col_percentage' ); ?>" type="button" data-toggle="modal" data-target=".bs-example-modal-md" class="btn btn-default link-service">Get in touch</button>
+                                                    </p>
+                                                </div><!-- /.col-4 -->
+                                                <div class="col-4 rectruting-services-item text-center">
+                                                    <div class="rectruting-services-item__percentage"><?php the_sub_field( 'second_col_percentage' ); ?></div>
+                                                    <h3 class="rectruting-services-item__headline"><?php the_sub_field( 'second_col_headline' ); ?></h3>
+                                                    <p class="rectruting-services-item__wr-link">
+                                                        <button data-service="<?php the_sub_field( 'second_col_percentage' ); ?>" type="button" data-toggle="modal" data-target=".bs-example-modal-md" class="btn btn-default link-service">Get in touch</button>
+                                                    </p>
+                                                </div><!-- /.col-4 -->
+                                                <div class="col-4 rectruting-services-item text-center">
+                                                    <div class="rectruting-services-item__percentage"><?php the_sub_field( 'third_col_percentage' ); ?></div>
+                                                    <h3 class="rectruting-services-item__headline"><?php the_sub_field( 'third_col_headline' ); ?></h3>
+                                                    <p class="rectruting-services-item__wr-link">
+                                                        <button data-service="<?php the_sub_field( 'third_col_percentage' ); ?>" type="button" data-toggle="modal" data-target=".bs-example-modal-md" class="btn btn-default link-service">Get in touch</button>
+                                                    </p>
+                                                </div><!-- /.col-lg-4 -->
+                                            </div><!-- /.row -->
+                                        </div><!-- / . container marketing -->
+                                        <?php endif; ?>
+
+
+                                </div>
                             <?php endif; ?>
 
 							<?php if( have_rows('nested_list') && $add_nested_list ): ?>
@@ -180,4 +222,25 @@ $list_type_second = get_field('list_type_second', $post_id);
 	</div> <!-- .wrapper -->
 </div> <!-- .txt__tab -->
 
+<!-- Small modal -->
+<div class="modal fade bs-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <?php
+            echo do_shortcode('[contact-form-7 id="368" title="Untitled"]');
+            ?>
+        </div>
+    </div>
+</div>
+
+<script>
+    jQuery(document).ready(function ($) {
+        $('.link-service').on('click', function () {
+            var service = $(this).attr('data-service');
+            $('input[name="our-service"]').val(service);
+            $('.our-service').text(service)
+        })
+    });
+</script>
 <?php get_footer(); ?>

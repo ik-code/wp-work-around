@@ -26,6 +26,21 @@ function register_post_types() {
 
 		'supports' => array( 'title')
 	) );
+
+    register_post_type( 'vacancies', array(
+      'labels'        => array(
+        'name'      => 'Vacancy',
+        'menu_name' => 'Vacancies',
+      ),
+      'public'        => true,
+      'has_archive'   => false,
+      'show_in_menu'  => true,
+      'query_var'  => true,
+      'menu_position' => 6,
+      'menu_icon'     => 'dashicons-clipboard',
+
+      'supports' => array( 'title', 'editor', 'excerpt')
+    ) );
 }
 
 add_action('init', 'register_post_types');
