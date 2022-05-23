@@ -9,6 +9,11 @@
             <div class="contact__content-l">
                 <div class="contact__contacts">
                     <div class="contact__contacts-item wow fadeInUp">
+
+                        <article>
+	                        <?php the_content(); ?>
+                        </article>
+
                         <div class="contact-item contact__contacts-item_email">
                             <a href="mailto:<?php the_field('contact_email'); ?>"><?php the_field('contact_email'); ?></a>
                         </div> <!-- .contact__contacts-item_email -->

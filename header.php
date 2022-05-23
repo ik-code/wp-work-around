@@ -87,12 +87,12 @@ $post_id = get_the_ID();
     </symbol>
 </svg>
 
-<div class="top <?php  if (is_home() || is_singular('services')) :  ?> top__black <?php endif; ?> <?php echo is_singular('services') ? 'top__black--singular' : NULL; ?>">
+<div class="top <?php  if ( is_page_template('page-home.php') || is_singular('services')) :  ?> top__black <?php endif; ?> <?php echo is_singular('services') ? 'top__black--singular' : NULL; ?>">
     <div class="wrapper">
         <div class="top__headline">
             <div class="top__logo">
                 <a href="<?php echo home_url(); ?>">
-                    <img src="<?php echo get_field('logo', 'option'); ?>" alt="">
+                    <img src="<?php echo get_field('logo', 'option'); ?>" alt="<?php echo get_bloginfo( 'name', 'display' ); ?>">
                 </a>
             </div> <!-- .top__logo -->
             <div class="top__nav">
@@ -106,7 +106,7 @@ $post_id = get_the_ID();
             </div> <!-- .top__burger -->
         </div> <!-- .top__headline -->
     </div> <!-- .wrapper -->
-    <?php  if (is_home()) :  ?>
+    <?php  if (is_page_template('page-home.php') ) :  ?>
     <div class="top__l">
         <p><?php the_field('first_line_left', 'option'); ?><br>
         <?php the_field('second_line_left', 'option'); ?></p>
